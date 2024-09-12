@@ -1038,12 +1038,11 @@ func CommitFromProto(cp *cmtproto.Commit) (*Commit, error) {
 //
 //nolint:musttag
 type ExtendedCommit struct {
-	Height             int64
-	Round              int32
-	BlockID            BlockID
-	ExtendedSignatures []ExtendedCommitSig
-
-	bitArray *bits.BitArray
+	Height             int64               `json:"height"`
+	Round              int32               `json:"round"`
+	BlockID            BlockID             `json:"block_id"`
+	ExtendedSignatures []ExtendedCommitSig `json:"extended_signatures"`
+	bitArray           *bits.BitArray
 }
 
 // Clone creates a deep copy of this extended commit.
